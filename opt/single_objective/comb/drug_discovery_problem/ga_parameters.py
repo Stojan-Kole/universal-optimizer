@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import QApplication, QVBoxLayout, QHBoxLayout, QLabel, QSpi
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon
 from opt.single_objective.comb.drug_discovery_problem.solver import genetic_algorithm
-from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
+from opt.single_objective.comb.drug_discovery_problem.mutation_info import MutationInfo
 
 class GAParameters:
     """

@@ -10,7 +10,7 @@ from rdkit.DataStructs import FingerprintSimilarity
 from opt.single_objective.comb.drug_discovery_problem.fitness import Fitness
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
 from opt.single_objective.comb.drug_discovery_problem.solver import genetic_algorithm
-from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
+from opt.single_objective.comb.drug_discovery_problem.mutation_info import MutationInfo
 from datetime import datetime
 
 class ClickableGroupBox(QGroupBox):

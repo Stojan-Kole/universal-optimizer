@@ -5,7 +5,7 @@ import os
 import contextlib
 from typing import Generator, List, Optional
 from rdkit import Chem
-from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
+from opt.single_objective.comb.drug_discovery_problem.mutation_info import MutationInfo
 from .individual import Individual
 
 from PyQt5.QtWidgets import QLabel, QProgressBar
@@ -272,7 +272,7 @@ def atom_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     rnd: float = random.random()
     cum_prob: float = 0 # cumulative probability, similar to roulette selection
     change_with: str = hetero_atom
-    for (second, prob) in mi.atomSwitchMap[hetero_atom]:
+    for (second, prob) in mi.atom_switch_map[hetero_atom]:
         cum_prob += prob
         if rnd <= cum_prob:
             change_with = second
@@ -292,7 +292,7 @@ def group_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     modified_smiles: List[str] = []
 
     # try with all known group mutations, and pick a random one
-    for replace_from, options in mi.groupSwitchMap.items():
+    for replace_from, options in mi.group_switch_map.items():
         for replace_with in options:
             # Find all the start positions of replaceFrom in smiles
             matches: List[int] = [match.start() for match in re.finditer(re.escape(replace_from), smiles)]

@@ -10,7 +10,7 @@ from opt.single_objective.comb.drug_discovery_problem.insert_molecule import New
 from opt.single_objective.comb.drug_discovery_problem.hyper_parameters import HyperParameters
 from opt.single_objective.comb.drug_discovery_problem.ga_parameters import GAParameters
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
-from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
+from opt.single_objective.comb.drug_discovery_problem.mutation_info import MutationInfo
 
 from uo.algorithm.metaheuristic.finish_control import FinishControl
 
