@@ -5,10 +5,10 @@ from PyQt5.QtGui import QImage, QPixmap, QPainter, QColor, QPen
 from PyQt5.QtCore import Qt
 from rdkit import Chem
 from rdkit.Chem import Draw
-from opt.single_objective.comb.drug_discovery_problem.moleculeBoxes import MoleculeBoxes
+from opt.single_objective.comb.drug_discovery_problem.molecule_boxes import MoleculeBoxes
 from opt.single_objective.comb.drug_discovery_problem.insertMolecule import NewMoleculeForm
 from opt.single_objective.comb.drug_discovery_problem.hyperParameters import HyperParameters
-from opt.single_objective.comb.drug_discovery_problem.gaParameters import GAParameters
+from opt.single_objective.comb.drug_discovery_problem.ga_parameters import GAParameters
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
 from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
 
@@ -31,25 +31,25 @@ class Application(QWidget):
         self.leftLayout = QVBoxLayout()
 
         self.molecules = self.problem.molecules
-        self.sliderValues = [0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95]
+        self.slider_values = [0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95]
 
         # Allow transfering molecule boxes between scroll areas
-        self.blockTransfer = False
+        self.block_transfer = False
 
-        self.moleculeBoxes = MoleculeBoxes(self)
+        self.molecule_boxes: MoleculeBoxes = MoleculeBoxes(self)
         self.newMoleculeForm = NewMoleculeForm(self)
         self.hyperParamLayout = HyperParameters(self)
         self.gaParameters = GAParameters(self)
 
         self.mi = MutationInfo()
-        self.rouletteSelection = False
-        self.numberOfGenerations = 100
-        self.tournamentSize = 4
-        self.elitismSize = 1
-        self.mutationProbability = 0.05
+        self.roulette_selection = False
+        self.number_of_generations = 100
+        self.tournament_size = 4
+        self.elitism_size = 1
+        self.mutation_probability = 0.05
 
-        self.sbmtBtn = self.newMoleculeForm.submitButton
-        self.resBtn = self.hyperParamLayout.resetButton
+        self.sbmt_btn = self.newMoleculeForm.submitButton
+        self.res_btn = self.hyperParamLayout.resetButton
 
         self.cnt = QWidget()
         self.h1 = QHBoxLayout()
@@ -62,7 +62,7 @@ class Application(QWidget):
         self.cnt.setFixedWidth(765)
         self.cnt.setFixedHeight(300)
 
-        self.leftLayout.addWidget(self.moleculeBoxes.getSelectionWidget())
+        self.leftLayout.addWidget(self.molecule_boxes.getSelectionWidget())
         self.leftLayout.addSpacing(70)
         self.leftLayout.addWidget(self.cnt)
         self.leftLayout.addSpacing(30)
@@ -74,9 +74,9 @@ class Application(QWidget):
         self.mainLayout.addWidget(self.leftWrapper)
 
         self.rightLayout = QVBoxLayout()
-        self.rightLayout.addWidget(self.moleculeBoxes.getPrecedentScrollArea())
-        self.rightLayout.addWidget(self.moleculeBoxes.getSecondScrollArea())
-        self.rightLayout.addWidget(self.moleculeBoxes.getBest())
+        self.rightLayout.addWidget(self.molecule_boxes.getPrecedentScrollArea())
+        self.rightLayout.addWidget(self.molecule_boxes.getSecondScrollArea())
+        self.rightLayout.addWidget(self.molecule_boxes.getBest())
 
         self.rightWrapper = QWidget()
         self.rightWrapper.setLayout(self.rightLayout)
@@ -99,7 +99,7 @@ class Application(QWidget):
     def onSubmitButtonClicked(self):
         smiles = self.newMoleculeForm.getInputSmilesText()
         description = self.newMoleculeForm.getInputDescriptionText()
-        self.moleculeBoxes.addToCatalogue(smiles, description)
+        self.molecule_boxes.addToCatalogue(smiles, description)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

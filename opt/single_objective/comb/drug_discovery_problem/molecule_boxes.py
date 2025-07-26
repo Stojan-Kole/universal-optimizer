@@ -14,37 +14,37 @@ from opt.single_objective.comb.drug_discovery_problem.mutationInfo import Mutati
 from datetime import datetime
 
 class ClickableGroupBox(QGroupBox):
-    def __init__(self, moleculeBoxes, index, ind, parent=None):
+    def __init__(self, molecule_boxes, index, ind, parent=None):
         super().__init__(parent)
-        self.moleculeBoxes = moleculeBoxes
+        self.molecule_boxes = molecule_boxes
         self.index = index
         self.ind = ind
        
     def mousePressEvent(self, event):
-        if self.moleculeBoxes.application.blockTransfer:
+        if self.molecule_boxes.application.block_transfer:
             return
         if self.ind != 0 and self.ind != 1:
             return
         if event.button() == Qt.LeftButton:
-            self.moleculeBoxes.removeBoxes()
-            self.moleculeBoxes.removeSelectedBoxes()
+            self.molecule_boxes.removeBoxes()
+            self.molecule_boxes.removeSelectedBoxes()
             if self.ind == 0:
-                self.moleculeBoxes.selectedMolecules.append(self.moleculeBoxes.molecules[self.index])
-                self.moleculeBoxes.molecules.pop(self.index)
+                self.molecule_boxes.selected_molecules.append(self.molecule_boxes.molecules[self.index])
+                self.molecule_boxes.molecules.pop(self.index)
             elif self.ind == 1:
-                self.moleculeBoxes.molecules.append(self.moleculeBoxes.selectedMolecules[self.index])
-                self.moleculeBoxes.selectedMolecules.pop(self.index)
-            self.moleculeBoxes.loadBoxes(tuple(self.moleculeBoxes.application.sliderValues))
-            self.moleculeBoxes.loadSelectedBoxes(tuple(self.moleculeBoxes.application.sliderValues))
+                self.molecule_boxes.molecules.append(self.molecule_boxes.selected_molecules[self.index])
+                self.molecule_boxes.selected_molecules.pop(self.index)
+            self.molecule_boxes.loadBoxes(tuple(self.molecule_boxes.application.slider_values))
+            self.molecule_boxes.loadSelectedBoxes(tuple(self.molecule_boxes.application.slider_values))
 
         super().mousePressEvent(event)
 
     def enterEvent(self, event):
-        if not self.moleculeBoxes.application.blockTransfer:
+        if not self.molecule_boxes.application.block_transfer:
             self.layout().itemAt(1).widget().setStyleSheet("color: darkgreen; font-weight: bold;")
 
     def leaveEvent(self, event):
-        if not self.moleculeBoxes.application.blockTransfer:
+        if not self.molecule_boxes.application.block_transfer:
             self.layout().itemAt(1).widget().setStyleSheet("color: black; font-weight: normal;")
 
 class MoleculeBoxes(QWidget):
@@ -101,8 +101,8 @@ class MoleculeBoxes(QWidget):
         self.container.setLayout(self.vbox)
         self.container.setFixedSize(760, 350)
 
-        self.selectedMolecules = []
-        self.newGenerationMolecules = []
+        self.selected_molecules = []
+        self.new_generation_molecules = []
 
         self.precedentLayout = QGridLayout()
 
@@ -156,8 +156,8 @@ class MoleculeBoxes(QWidget):
         self.rightCont2.setLayout(self.rightHB)
         self.rightCont2.setFixedSize(920, 325)
 
-        self.rightHBox2 = QHBoxLayout()
-        self.rightCont3 = QWidget()
+        self.right_hbox2 = QHBoxLayout()
+        self.right_cont3 = QWidget()
 
         self.loadBoxes()
         self.loadSelectedBoxes()
@@ -178,8 +178,8 @@ class MoleculeBoxes(QWidget):
 
     def loadSelectedBoxes(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
         self.selectedBoxes = []
-        self.selectedMolecules.sort(reverse=True)
-        for index, individual in enumerate(self.selectedMolecules):
+        self.selected_molecules.sort(reverse=True)
+        for index, individual in enumerate(self.selected_molecules):
             row = index // 3
             col = index % 3
             smiles = individual.getSmiles()
@@ -190,11 +190,11 @@ class MoleculeBoxes(QWidget):
             self.selectedBoxes.append(self.selectedMoleculeBox)
             self.precedentLayout.addWidget(self.selectedMoleculeBox, row, col)
 
-    def loadNewGeneration(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
+    def load_new_generation(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
         self.newGenerationBoxes = []
-        if len(self.newGenerationMolecules) > 0:
-            self.newGenerationMolecules.sort(reverse=True)
-            for index, individual in enumerate(self.newGenerationMolecules):
+        if len(self.new_generation_molecules) > 0:
+            self.new_generation_molecules.sort(reverse=True)
+            for index, individual in enumerate(self.new_generation_molecules):
                 row = index // self.columnsPerRow
                 col = index % self.columnsPerRow
                 smiles = individual.getSmiles()
@@ -206,9 +206,9 @@ class MoleculeBoxes(QWidget):
                 self.secondLayout.addWidget(self.newGenerationMoleculeBox, row, col)
            
                 self.bestBox.deleteLater()
-                self.bestBox = self.createMoleculeBox(self.newGenerationMolecules[0].getSmiles(), "Current best", self.newGenerationMolecules[0].getQED(), 0, -1)
+                self.bestBox = self.createMoleculeBox(self.new_generation_molecules[0].getSmiles(), "Current best", self.new_generation_molecules[0].getQED(), 0, -1)
                 self.bestBox.setAlignment(Qt.AlignCenter)
-                self.rightHBox2.insertWidget(1, self.bestBox)
+                self.right_hbox2.insertWidget(1, self.bestBox)
        
     def removeBoxes(self):
         for box in self.boxes:
@@ -238,7 +238,7 @@ class MoleculeBoxes(QWidget):
         return self.rightCont2
 
     def getBest(self):
-        return self.rightCont3
+        return self.right_cont3
 
     def createMoleculeBox(self, smiles, description, qed, index, ind):
         box = ClickableGroupBox(self, index, ind)
@@ -272,16 +272,16 @@ class MoleculeBoxes(QWidget):
         return box
    
     def onSelectAllButtonClicked(self):
-        if self.application.blockTransfer:
+        if self.application.block_transfer:
             return
         self.removeBoxes()
         self.removeSelectedBoxes()
         for i in range(len(self.molecules)):
-            self.selectedMolecules.append(self.molecules[i])
+            self.selected_molecules.append(self.molecules[i])
             # self.molecules.pop(i)
         self.molecules = []
-        self.loadBoxes(tuple(self.application.sliderValues))
-        self.loadSelectedBoxes(tuple(self.application.sliderValues))
+        self.loadBoxes(tuple(self.application.slider_values))
+        self.loadSelectedBoxes(tuple(self.application.slider_values))
 
     def addToCatalogue(self, smiles, description):
         molecule = None
@@ -296,7 +296,7 @@ class MoleculeBoxes(QWidget):
        
         self.removeBoxes()
         self.removeSelectedBoxes()
-        self.molecules.append(Individual(smiles, description, self.application.sliderValues))
+        self.molecules.append(Individual(smiles, description, self.application.slider_values))
         with open('../data/molecules.json', 'r') as file:
             data = json.load(file)
         data.append({
@@ -308,29 +308,29 @@ class MoleculeBoxes(QWidget):
         self.loadBoxes()
         self.loadSelectedBoxes()
 
-    def onGenerateButtonClicked(self):
-        self.saveLabel.setStyleSheet("color: transparent; font-style: italic;")
+    def on_generate_button_clicked(self):
+        self.save_label.setStyleSheet("color: transparent; font-style: italic;")
         self.removeSelectedBoxes()
-        self.selectedMolecules = []
-        for ind in self.newGenerationMolecules:
-            self.selectedMolecules.append(Individual(ind.getSmiles(), ind.getDescription(), tuple(self.application.sliderValues)))
-        self.loadSelectedBoxes(tuple(self.application.sliderValues))
+        self.selected_molecules = []
+        for ind in self.new_generation_molecules:
+            self.selected_molecules.append(Individual(ind.getSmiles(), ind.getDescription(), tuple(self.application.slider_values)))
+        self.loadSelectedBoxes(tuple(self.application.slider_values))
         self.removeNewGenerationBoxes()
 
-        self.newGenerationMolecules = genetic_algorithm(
-            self.selectedMolecules,
+        self.new_generation_molecules = genetic_algorithm(
+            self.selected_molecules,
             True,
-            self.application.numberOfGenerations,
-            self.application.rouletteSelection,
-            self.application.tournamentSize,
-            self.application.elitismSize,
-            self.application.mutationProbability,
+            self.application.number_of_generations,
+            self.application.roulette_selection,
+            self.application.tournament_size,
+            self.application.elitism_size,
+            self.application.mutation_probability,
             self.application.mi,
-            self.individualLabel,
-            self.individualProgress
+            self.individual_label,
+            self.individual_progress
         )
 
-        self.loadNewGeneration(tuple(self.application.sliderValues))
+        self.load_new_generation(tuple(self.application.slider_values))
         labelText = self.secondLabel.text()
         self.precedentLabel.setText(labelText)
         # Regular expression to match a number at the start of the string
@@ -338,27 +338,27 @@ class MoleculeBoxes(QWidget):
         # Check if a match was found and extract the number
         labelNumber = int(match.group(0)) + 1
         self.secondLabel.setText(str(labelNumber) + ". generation")
-        self.generationLabel.setText(f"Generation: {labelNumber}/{self.application.numberOfGenerations}")
-        self.generationProgress.setValue(labelNumber)
+        self.generation_label.setText(f"Generation: {labelNumber}/{self.application.number_of_generations}")
+        self.generation_progress.setValue(labelNumber)
 
-    def onFinalButtonClicked(self):
-        self.saveLabel.setStyleSheet("color: transparent; font-style: italic;")
+    def on_final_button_clicked(self):
+        self.save_label.setStyleSheet("color: transparent; font-style: italic;")
         labelText = self.secondLabel.text()
         # Regular expression to match a number at the start of the string
         match = re.match(r'^\d+', labelText)
         # Check if a match was found and extract the number
         labelNumber = int(match.group(0))
-        for _ in range(self.application.numberOfGenerations - labelNumber):
-            self.onGenerateButtonClicked()
+        for _ in range(self.application.number_of_generations - labelNumber):
+            self.on_generate_button_clicked()
 
-    def onSaveButtonClicked(self):
+    def on_save_button_clicked(self):
         formattedDatetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open('opt/single_objective/comb/drug_discovery_problem/results/best_candidate_molecules.txt', 'a') as candidatesFile:
-            candidatesFile.write(f"SMILES: {self.newGenerationMolecules[0].getSmiles()}\nQED: {round(self.newGenerationMolecules[0].getQED(), 4)}\nDate created: {formattedDatetime}\nParameter weights:")
-            for value in list(self.newGenerationMolecules[0].getWeights()):
+            candidatesFile.write(f"SMILES: {self.new_generation_molecules[0].getSmiles()}\nQED: {round(self.new_generation_molecules[0].getQED(), 4)}\nDate created: {formattedDatetime}\nParameter weights:")
+            for value in list(self.new_generation_molecules[0].getWeights()):
                 candidatesFile.write(f"{value} ")
             candidatesFile.write("\n-------------------------------------------\n")
-        self.saveLabel.setStyleSheet("color: green; font-style: italic;")
+        self.save_label.setStyleSheet("color: green; font-style: italic;")
 
         # Create a QMessageBox
         msgBox = QMessageBox(self)
@@ -391,7 +391,7 @@ class MoleculeBoxes(QWidget):
             self.calculateAverageQED()
 
     def tanimoto(self):
-        smilesList = [s.getSmiles() for s in self.newGenerationMolecules]
+        smilesList = [s.getSmiles() for s in self.new_generation_molecules]
         mols = [Chem.MolFromSmiles(s) for s in smilesList]
         fingerprints = [rdMolDescriptors.GetMorganFingerprintAsBitVect(mol, 2, nBits = 2048) for mol in mols]
         # Calculate pairwise Tanimoto similarity
@@ -408,39 +408,39 @@ class MoleculeBoxes(QWidget):
 
     def calculateAverageQED(self):
         formattedDatetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        coeffList = [s.getQED() for s in self.newGenerationMolecules]
+        coeffList = [s.getQED() for s in self.new_generation_molecules]
         avgQED = sum(coeffList) / len(coeffList)
         with open('opt/single_objective/comb/drug_discovery_problem/results/averageQED.txt', 'a') as tanimotoFile:
             tanimotoFile.write(f"{avgQED}\n{formattedDatetime}\n------------------------------------\n")
 
-    def onRestartButtonClicked(self):
-        self.saveLabel.setStyleSheet("color: transparent; font-style: italic;")
-        self.generationLabel.setText(f"Generation: 1/{self.application.numberOfGenerations}")
-        self.generationProgress.setValue(1)
-        self.individualLabel.setText(f"Individual: 0/{len(self.selectedMolecules)}")
-        self.individualProgress.setValue(0)
+    def on_restart_button_clicked(self):
+        self.save_label.setStyleSheet("color: transparent; font-style: italic;")
+        self.generation_label.setText(f"Generation: 1/{self.application.number_of_generations}")
+        self.generation_progress.setValue(1)
+        self.individual_label.setText(f"Individual: 0/{len(self.selected_molecules)}")
+        self.individual_progress.setValue(0)
         self.removeBoxes()
         self.removeSelectedBoxes()
         self.removeNewGenerationBoxes()
         self.molecules = self.application.problem.molecules
-        self.loadBoxes(self.application.sliderValues)
+        self.loadBoxes(self.application.slider_values)
         self.application.molecules = []
-        self.selectedMolecules = []
-        self.newGenerationMolecules = []
+        self.selected_molecules = []
+        self.new_generation_molecules = []
         self.bestBox.deleteLater()
-        self.generateButton.setDisabled(True)
-        self.generateButton.setStyleSheet("Color: #757575;")
-        self.finalButton.setDisabled(True)
-        self.finalButton.setStyleSheet("Color: #757575;")
-        self.saveButton.setDisabled(True)
-        self.saveButton.setStyleSheet("Color: #757575;")
-        self.restartButton.setDisabled(True)
-        self.restartButton.setStyleSheet("Color: #757575;")
-        self.loadNewGeneration()
+        self.generate_button.setDisabled(True)
+        self.generate_button.setStyleSheet("Color: #757575;")
+        self.final_button.setDisabled(True)
+        self.final_button.setStyleSheet("Color: #757575;")
+        self.save_button.setDisabled(True)
+        self.save_button.setStyleSheet("Color: #757575;")
+        self.restart_button.setDisabled(True)
+        self.restart_button.setStyleSheet("Color: #757575;")
+        self.load_new_generation()
         self.precedentLabel.setText("1. generation")
         self.secondLabel.setText("2. generation")
-        self.application.gaParameters.launchButton.setDisabled(False)
-        self.application.gaParameters.launchButton.setStyleSheet("""
+        self.application.gaParameters.launch_button.setDisabled(False)
+        self.application.gaParameters.launch_button.setStyleSheet("""
             QPushButton {
                 background-color: #4CAF50;
                 color: white;
@@ -454,8 +454,8 @@ class MoleculeBoxes(QWidget):
                 background-color: #45a049;
             }
         """)
-        self.application.gaParameters.rouletteCheckBox.setDisabled(False)
-        self.application.gaParameters.rouletteCheckBox.setStyleSheet("""
+        self.application.gaParameters.roulette_check_box.setDisabled(False)
+        self.application.gaParameters.roulette_check_box.setStyleSheet("""
             QCheckBox {
                 text-decoration: none;
             }
@@ -475,15 +475,15 @@ class MoleculeBoxes(QWidget):
                 border: 2px solid gray;
             }
         """)
-        self.application.gaParameters.generationSpin.setDisabled(False)
-        self.application.gaParameters.tournamentSpin.setDisabled(False)
-        self.application.gaParameters.elitismSpin.setDisabled(False)
-        self.application.gaParameters.mutationLineEdit.setDisabled(False)
-        self.application.sbmtBtn.setDisabled(False)
-        self.application.resBtn.setDisabled(False)
-        self.application.blockTransfer = False
-        while self.rightHBox2.count():
-            item = self.rightHBox2.takeAt(0)
+        self.application.gaParameters.generation_spin.setDisabled(False)
+        self.application.gaParameters.tournament_spin.setDisabled(False)
+        self.application.gaParameters.elitism_spin.setDisabled(False)
+        self.application.gaParameters.mutation_line_edit.setDisabled(False)
+        self.application.sbmt_btn.setDisabled(False)
+        self.application.res_btn.setDisabled(False)
+        self.application.block_transfer = False
+        while self.right_hbox2.count():
+            item = self.right_hbox2.takeAt(0)
             widget = item.widget()
             if widget:
                 widget.deleteLater()
