@@ -15,6 +15,8 @@ gurobipy = "^10.0.3"
 linopy = "0.3.0"
 coverage = "^7.4.0"
 networkx = "^3.3"
+pyqt5 = "^5.14.1"
+rdkit = "^2024.3.2"
 
 [tool.poetry.group.docs] 
 optional = true
