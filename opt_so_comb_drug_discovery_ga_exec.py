@@ -7,7 +7,7 @@ from rdkit import Chem
 from rdkit.Chem import Draw
 from opt.single_objective.comb.drug_discovery_problem.molecule_boxes import MoleculeBoxes
 from opt.single_objective.comb.drug_discovery_problem.insertMolecule import NewMoleculeForm
-from opt.single_objective.comb.drug_discovery_problem.hyperParameters import HyperParameters
+from opt.single_objective.comb.drug_discovery_problem.hyper_parameters import HyperParameters
 from opt.single_objective.comb.drug_discovery_problem.ga_parameters import GAParameters
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
 from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
@@ -49,14 +49,14 @@ class Application(QWidget):
         self.mutation_probability = 0.05
 
         self.sbmt_btn = self.newMoleculeForm.submitButton
-        self.res_btn = self.hyperParamLayout.resetButton
+        self.res_btn = self.hyperParamLayout.reset_button
 
         self.cnt = QWidget()
         self.h1 = QHBoxLayout()
         self.h1.setSizeConstraint(760)
 
         self.h1.addWidget(self.newMoleculeForm.getForm())
-        self.h1.addWidget(self.hyperParamLayout.getSlidersWidget())
+        self.h1.addWidget(self.hyperParamLayout.get_sliders_widget())
 
         self.cnt.setLayout(self.h1)
         self.cnt.setFixedWidth(765)

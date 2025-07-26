@@ -34,8 +34,8 @@ class ClickableGroupBox(QGroupBox):
             elif self.ind == 1:
                 self.molecule_boxes.molecules.append(self.molecule_boxes.selected_molecules[self.index])
                 self.molecule_boxes.selected_molecules.pop(self.index)
-            self.molecule_boxes.loadBoxes(tuple(self.molecule_boxes.application.slider_values))
-            self.molecule_boxes.loadSelectedBoxes(tuple(self.molecule_boxes.application.slider_values))
+            self.molecule_boxes.load_boxes(tuple(self.molecule_boxes.application.slider_values))
+            self.molecule_boxes.load_selected_boxes(tuple(self.molecule_boxes.application.slider_values))
 
         super().mousePressEvent(event)
 
@@ -159,10 +159,10 @@ class MoleculeBoxes(QWidget):
         self.right_hbox2 = QHBoxLayout()
         self.right_cont3 = QWidget()
 
-        self.loadBoxes()
-        self.loadSelectedBoxes()
+        self.load_boxes()
+        self.load_selected_boxes()
        
-    def loadBoxes(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
+    def load_boxes(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
         self.boxes = []
         self.molecules.sort(reverse=True)
         for index, individual in enumerate(self.molecules):
@@ -176,7 +176,7 @@ class MoleculeBoxes(QWidget):
             self.boxes.append(self.moleculeBox)
             self.layout.addWidget(self.moleculeBox, row, col)
 
-    def loadSelectedBoxes(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
+    def load_selected_boxes(self, weights = (0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95)):
         self.selectedBoxes = []
         self.selected_molecules.sort(reverse=True)
         for index, individual in enumerate(self.selected_molecules):
@@ -280,8 +280,8 @@ class MoleculeBoxes(QWidget):
             self.selected_molecules.append(self.molecules[i])
             # self.molecules.pop(i)
         self.molecules = []
-        self.loadBoxes(tuple(self.application.slider_values))
-        self.loadSelectedBoxes(tuple(self.application.slider_values))
+        self.load_boxes(tuple(self.application.slider_values))
+        self.load_selected_boxes(tuple(self.application.slider_values))
 
     def addToCatalogue(self, smiles, description):
         molecule = None
@@ -305,8 +305,8 @@ class MoleculeBoxes(QWidget):
         })
         with open('../data/molecules.json', 'w') as file:
             json.dump(data, file, indent = 4)
-        self.loadBoxes()
-        self.loadSelectedBoxes()
+        self.load_boxes()
+        self.load_selected_boxes()
 
     def on_generate_button_clicked(self):
         self.save_label.setStyleSheet("color: transparent; font-style: italic;")
@@ -314,7 +314,7 @@ class MoleculeBoxes(QWidget):
         self.selected_molecules = []
         for ind in self.new_generation_molecules:
             self.selected_molecules.append(Individual(ind.getSmiles(), ind.getDescription(), tuple(self.application.slider_values)))
-        self.loadSelectedBoxes(tuple(self.application.slider_values))
+        self.load_selected_boxes(tuple(self.application.slider_values))
         self.removeNewGenerationBoxes()
 
         self.new_generation_molecules = genetic_algorithm(
@@ -423,7 +423,7 @@ class MoleculeBoxes(QWidget):
         self.removeSelectedBoxes()
         self.removeNewGenerationBoxes()
         self.molecules = self.application.problem.molecules
-        self.loadBoxes(self.application.slider_values)
+        self.load_boxes(self.application.slider_values)
         self.application.molecules = []
         self.selected_molecules = []
         self.new_generation_molecules = []
