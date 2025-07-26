@@ -283,7 +283,7 @@ class MoleculeBoxes(QWidget):
         self.load_boxes(tuple(self.application.slider_values))
         self.load_selected_boxes(tuple(self.application.slider_values))
 
-    def addToCatalogue(self, smiles, description):
+    def add_to_catalogue(self, smiles, description):
         molecule = None
         try:
             molecule = Chem.MolFromSmiles(smiles)
@@ -297,13 +297,13 @@ class MoleculeBoxes(QWidget):
         self.removeBoxes()
         self.removeSelectedBoxes()
         self.molecules.append(Individual(smiles, description, self.application.slider_values))
-        with open('../data/molecules.json', 'r') as file:
+        with open('opt/single_objective/comb/drug_discovery_problem/data/molecules.json', 'r') as file:
             data = json.load(file)
         data.append({
             "SMILES": smiles,
             "Description": description
         })
-        with open('../data/molecules.json', 'w') as file:
+        with open('opt/single_objective/comb/drug_discovery_problem/data/molecules.json', 'w') as file:
             json.dump(data, file, indent = 4)
         self.load_boxes()
         self.load_selected_boxes()

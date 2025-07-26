@@ -6,7 +6,7 @@ from PyQt5.QtCore import Qt
 from rdkit import Chem
 from rdkit.Chem import Draw
 from opt.single_objective.comb.drug_discovery_problem.molecule_boxes import MoleculeBoxes
-from opt.single_objective.comb.drug_discovery_problem.insertMolecule import NewMoleculeForm
+from opt.single_objective.comb.drug_discovery_problem.insert_molecule import NewMoleculeForm
 from opt.single_objective.comb.drug_discovery_problem.hyper_parameters import HyperParameters
 from opt.single_objective.comb.drug_discovery_problem.ga_parameters import GAParameters
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
@@ -48,14 +48,14 @@ class Application(QWidget):
         self.elitism_size = 1
         self.mutation_probability = 0.05
 
-        self.sbmt_btn = self.newMoleculeForm.submitButton
+        self.sbmt_btn = self.newMoleculeForm.submit_button
         self.res_btn = self.hyperParamLayout.reset_button
 
         self.cnt = QWidget()
         self.h1 = QHBoxLayout()
         self.h1.setSizeConstraint(760)
 
-        self.h1.addWidget(self.newMoleculeForm.getForm())
+        self.h1.addWidget(self.newMoleculeForm.get_form())
         self.h1.addWidget(self.hyperParamLayout.get_sliders_widget())
 
         self.cnt.setLayout(self.h1)
@@ -96,10 +96,10 @@ class Application(QWidget):
         painter.drawLine(800, 20, 800, 880)
         painter.end()
 
-    def onSubmitButtonClicked(self):
-        smiles = self.newMoleculeForm.getInputSmilesText()
-        description = self.newMoleculeForm.getInputDescriptionText()
-        self.molecule_boxes.addToCatalogue(smiles, description)
+    def on_submit_button_clicked(self):
+        smiles = self.newMoleculeForm.get_input_smiles_text()
+        description = self.newMoleculeForm.get_input_description_text()
+        self.molecule_boxes.add_to_catalogue(smiles, description)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
