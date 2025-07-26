@@ -59,10 +59,10 @@ def genetic_algorithm(
             mutation(new_population[j], mutation_probability, mi)
             mutation(new_population[j + 1], mutation_probability, mi)
 
-            new_population[j].setDescription("")
-            new_population[j].calcFitness()
-            new_population[j + 1].setDescription("")
-            new_population[j + 1].calcFitness()
+            new_population[j].set_description("")
+            new_population[j]._calculate_fitness()
+            new_population[j + 1].set_description("")
+            new_population[j + 1]._calculate_fitness()
 
             individual_label.setText(f"Individual: {j+1}/{population_size}")
             individual_progress.setValue(j + 1)
@@ -98,11 +98,11 @@ def roulette_wheel_selection(population: List[Individual]) -> Individual:
     :return: Selected individual
     :rtype: `Individual`
     """
-    total_fitness = sum(ind.getQED() for ind in population)
+    total_fitness = sum(ind.get_qed() for ind in population)
     probabilities = []
     acc = 0
     for ind in population:
-        acc += ind.getQED() / total_fitness
+        acc += ind.get_qed() / total_fitness
         probabilities.append(acc)
 
     rnd = random.random()
@@ -121,7 +121,7 @@ def tournament_selection(population: List[Individual], tournament_size: int) -> 
     :rtype: `Individual`
     """
     sample = random.sample(population, tournament_size)
-    return max(sample, key=lambda ind: ind.getQED())
+    return max(sample, key=lambda ind: ind.get_qed())
 
 @contextlib.contextmanager
 def suppress_rdkit_warnings() -> Generator[None, None, None]:
@@ -161,8 +161,8 @@ def crossover(parent1: Individual, parent2: Individual, child1: Individual, chil
     """
 
     # Assuming smiles strings have more than 1 character (in order to be eligible for crossover)
-    smiles1: str = parent1.getSmiles()
-    smiles2: str = parent2.getSmiles()
+    smiles1: str = parent1.get_smiles()
+    smiles2: str = parent2.get_smiles()
     n1: int = len(smiles1)
     n2: int = len(smiles2)
     MAXITERS: int = 2000
@@ -176,8 +176,8 @@ def crossover(parent1: Individual, parent2: Individual, child1: Individual, chil
         child_smiles2: str = smiles1[cp1:] + smiles2[:cp2]
 
         if is_valid_smiles(child_smiles1) and is_valid_smiles(child_smiles2):
-            child1.setSmiles(child_smiles1)
-            child2.setSmiles(child_smiles2)
+            child1.set_smiles(child_smiles1)
+            child2.set_smiles(child_smiles2)
             break
     
     if i == MAXITERS:
@@ -208,16 +208,16 @@ def crossover(parent1: Individual, parent2: Individual, child1: Individual, chil
         child_smiles2 = smiles2[:second1] + smiles1[first1:first2] + smiles2[second2:]
 
         if is_valid_smiles(child_smiles1) and is_valid_smiles(child_smiles2):
-            child1.setSmiles(child_smiles1)
-            child2.setSmiles(child_smiles2)
+            child1.set_smiles(child_smiles1)
+            child2.set_smiles(child_smiles2)
             break
 
     if i == MAXITERS:
         print('Maximum number of iterations for two point crossover of following molecules exceeded:\n')
         print(f'{smiles1}\n{smiles2}\n')
         print('Passing them to the new generation.\n')
-        child1.setSmiles(smiles1)
-        child2.setSmiles(smiles2)
+        child1.set_smiles(smiles1)
+        child2.set_smiles(smiles2)
 
 def mutation(individual: Individual, mutation_probability: float, mi: MutationInfo) -> None:
     """
@@ -255,7 +255,7 @@ def atom_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     :param mi: MutationInfo with atom switch map
     :rtype: None
     """
-    smiles: str = individual.getSmiles()
+    smiles: str = individual.get_smiles()
     hetero_atoms: List[str] = ['O', 'S', 'N', 'P']
     indices_of_hetero_atoms: List[int] = []
     for i, ch in enumerate(smiles):
@@ -278,7 +278,7 @@ def atom_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
             change_with = second
             break
     smiles = smiles[:indices_of_hetero_atoms[random_hetero_index]] + change_with + smiles[indices_of_hetero_atoms[random_hetero_index] + 1:]
-    individual.setSmiles(smiles)
+    individual.set_smiles(smiles)
 
 def group_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     """
@@ -288,7 +288,7 @@ def group_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     :param mi: MutationInfo with group switch map
     :rtype: None
     """
-    smiles: str = individual.getSmiles()
+    smiles: str = individual.get_smiles()
     modified_smiles: List[str] = []
 
     # try with all known group mutations, and pick a random one
@@ -308,7 +308,7 @@ def group_switch_mutation(individual: Individual, mi: MutationInfo) -> None:
     new_smiles: str = smiles
     if len(modified_smiles) > 0:
         new_smiles = random.choice(modified_smiles)
-    individual.setSmiles(new_smiles)
+    individual.set_smiles(new_smiles)
     
 def insertion_mutation(individual: Individual, mi: MutationInfo) -> None:
     """
@@ -318,7 +318,7 @@ def insertion_mutation(individual: Individual, mi: MutationInfo) -> None:
     :param mi: MutationInfo with list of insertions
     :rtype: None
     """
-    smiles: str = individual.getSmiles()
+    smiles: str = individual.get_smiles()
     n: int = len(smiles)
     MAX_INSERTION_ATTEMPTS: int = 200
     random_insertion: str = random.choice(mi.insertions)
@@ -328,7 +328,7 @@ def insertion_mutation(individual: Individual, mi: MutationInfo) -> None:
         random_insertion_position: int = random.randrange(n)
         new_smiles: str = smiles[:random_insertion_position] + random_insertion + smiles[random_insertion_position:]
         if is_valid_smiles(new_smiles):
-            individual.setSmiles(new_smiles)
+            individual.set_smiles(new_smiles)
             return
 
     # Insertion failed, in order to perform any other mutation, call deletionMutation (for example)
@@ -342,7 +342,7 @@ def deletion_mutation(individual: Individual, mi: MutationInfo) -> None:
     :param mi: MutationInfo (not used but included for consistency)
     :rtype: None
     """
-    smiles: str = individual.getSmiles()
+    smiles: str = individual.get_smiles()
     n: int = len(smiles)
     MAX_BRANCH_DELETION_ATTEMPTS: int = 20
     MAX_ITERS: int = 500
@@ -370,7 +370,7 @@ def deletion_mutation(individual: Individual, mi: MutationInfo) -> None:
 
             new_smiles: str = smiles[:start_index] + smiles[end_index + 1:]
             if is_valid_smiles(new_smiles):
-                individual.setSmiles(new_smiles)
+                individual.set_smiles(new_smiles)
                 return
 
     # Else: zero branches in the molecule, or branches can not be deleted
@@ -382,7 +382,7 @@ def deletion_mutation(individual: Individual, mi: MutationInfo) -> None:
         if smiles[random_index].isalpha():
             new_smiles = smiles[:random_index] + smiles[random_index + 1:]
             if is_valid_smiles(new_smiles):
-                individual.setSmiles(new_smiles)
+                individual.set_smiles(new_smiles)
                 break
     # Single atom deletion didn't succeed neither, hence, in order not to leave the molecule unchanged, we call
     # atom switch mutation. In case it also fails, that method will call group mutation, which will not fail,

@@ -168,10 +168,10 @@ class MoleculeBoxes(QWidget):
         for index, individual in enumerate(self.molecules):
             row = index // 3
             col = index % 3
-            smiles = individual.getSmiles()
-            description = individual.getDescription()
-            individual.setWeights(weights)
-            qed = individual.getQED()
+            smiles = individual.get_smiles()
+            description = individual.get_description()
+            individual.set_weights(weights)
+            qed = individual.get_qed()
             self.moleculeBox = self.createMoleculeBox(smiles, description, qed, index, 0)
             self.boxes.append(self.moleculeBox)
             self.layout.addWidget(self.moleculeBox, row, col)
@@ -182,10 +182,10 @@ class MoleculeBoxes(QWidget):
         for index, individual in enumerate(self.selected_molecules):
             row = index // 3
             col = index % 3
-            smiles = individual.getSmiles()
-            description = individual.getDescription()
-            individual.setWeights(weights)
-            qed = individual.getQED()
+            smiles = individual.get_smiles()
+            description = individual.get_description()
+            individual.set_weights(weights)
+            qed = individual.get_qed()
             self.selectedMoleculeBox = self.createMoleculeBox(smiles, description, qed, index, 1)
             self.selectedBoxes.append(self.selectedMoleculeBox)
             self.precedentLayout.addWidget(self.selectedMoleculeBox, row, col)
@@ -197,16 +197,16 @@ class MoleculeBoxes(QWidget):
             for index, individual in enumerate(self.new_generation_molecules):
                 row = index // self.columnsPerRow
                 col = index % self.columnsPerRow
-                smiles = individual.getSmiles()
-                description = individual.getDescription()
-                individual.setWeights(weights)
-                qed = individual.getQED()
+                smiles = individual.get_smiles()
+                description = individual.get_description()
+                individual.set_weights(weights)
+                qed = individual.get_qed()
                 self.newGenerationMoleculeBox = self.createMoleculeBox(smiles, description, qed, index, -1)
                 self.newGenerationBoxes.append(self.newGenerationMoleculeBox)
                 self.secondLayout.addWidget(self.newGenerationMoleculeBox, row, col)
            
                 self.bestBox.deleteLater()
-                self.bestBox = self.createMoleculeBox(self.new_generation_molecules[0].getSmiles(), "Current best", self.new_generation_molecules[0].getQED(), 0, -1)
+                self.bestBox = self.createMoleculeBox(self.new_generation_molecules[0].get_smiles(), "Current best", self.new_generation_molecules[0].get_qed(), 0, -1)
                 self.bestBox.setAlignment(Qt.AlignCenter)
                 self.right_hbox2.insertWidget(1, self.bestBox)
        
@@ -313,7 +313,7 @@ class MoleculeBoxes(QWidget):
         self.removeSelectedBoxes()
         self.selected_molecules = []
         for ind in self.new_generation_molecules:
-            self.selected_molecules.append(Individual(ind.getSmiles(), ind.getDescription(), tuple(self.application.slider_values)))
+            self.selected_molecules.append(Individual(ind.get_smiles(), ind.get_description(), tuple(self.application.slider_values)))
         self.load_selected_boxes(tuple(self.application.slider_values))
         self.removeNewGenerationBoxes()
 
@@ -354,7 +354,7 @@ class MoleculeBoxes(QWidget):
     def on_save_button_clicked(self):
         formattedDatetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open('opt/single_objective/comb/drug_discovery_problem/results/best_candidate_molecules.txt', 'a') as candidatesFile:
-            candidatesFile.write(f"SMILES: {self.new_generation_molecules[0].getSmiles()}\nQED: {round(self.new_generation_molecules[0].getQED(), 4)}\nDate created: {formattedDatetime}\nParameter weights:")
+            candidatesFile.write(f"SMILES: {self.new_generation_molecules[0].get_smiles()}\nQED: {round(self.new_generation_molecules[0].get_qed(), 4)}\nDate created: {formattedDatetime}\nParameter weights:")
             for value in list(self.new_generation_molecules[0].getWeights()):
                 candidatesFile.write(f"{value} ")
             candidatesFile.write("\n-------------------------------------------\n")
@@ -391,7 +391,7 @@ class MoleculeBoxes(QWidget):
             self.calculateAverageQED()
 
     def tanimoto(self):
-        smilesList = [s.getSmiles() for s in self.new_generation_molecules]
+        smilesList = [s.get_smiles() for s in self.new_generation_molecules]
         mols = [Chem.MolFromSmiles(s) for s in smilesList]
         fingerprints = [rdMolDescriptors.GetMorganFingerprintAsBitVect(mol, 2, nBits = 2048) for mol in mols]
         # Calculate pairwise Tanimoto similarity
@@ -408,7 +408,7 @@ class MoleculeBoxes(QWidget):
 
     def calculateAverageQED(self):
         formattedDatetime = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        coeffList = [s.getQED() for s in self.new_generation_molecules]
+        coeffList = [s.get_qed() for s in self.new_generation_molecules]
         avgQED = sum(coeffList) / len(coeffList)
         with open('opt/single_objective/comb/drug_discovery_problem/results/averageQED.txt', 'a') as tanimotoFile:
             tanimotoFile.write(f"{avgQED}\n{formattedDatetime}\n------------------------------------\n")
