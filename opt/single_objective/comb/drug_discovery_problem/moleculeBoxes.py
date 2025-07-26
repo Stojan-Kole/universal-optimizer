@@ -9,7 +9,7 @@ from rdkit.Chem import Draw, rdMolDescriptors
 from rdkit.DataStructs import FingerprintSimilarity
 from opt.single_objective.comb.drug_discovery_problem.fitness import Fitness
 from opt.single_objective.comb.drug_discovery_problem.individual import Individual
-from opt.single_objective.comb.drug_discovery_problem.geneticAlgorithm import geneticAlgorithm
+from opt.single_objective.comb.drug_discovery_problem.solver import genetic_algorithm
 from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
 from datetime import datetime
 
@@ -317,7 +317,7 @@ class MoleculeBoxes(QWidget):
         self.loadSelectedBoxes(tuple(self.application.sliderValues))
         self.removeNewGenerationBoxes()
 
-        self.newGenerationMolecules = geneticAlgorithm(
+        self.newGenerationMolecules = genetic_algorithm(
             self.selectedMolecules,
             True,
             self.application.numberOfGenerations,
@@ -422,7 +422,7 @@ class MoleculeBoxes(QWidget):
         self.removeBoxes()
         self.removeSelectedBoxes()
         self.removeNewGenerationBoxes()
-        self.molecules = self.application.readMolecules()
+        self.molecules = self.application.problem.molecules
         self.loadBoxes(self.application.sliderValues)
         self.application.molecules = []
         self.selectedMolecules = []

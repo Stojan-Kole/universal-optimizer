@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QLabel, QSpinBox, QWidget, QPushButton, QLineEdit, QCheckBox, QProgressBar
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QIcon
-from opt.single_objective.comb.drug_discovery_problem.geneticAlgorithm import geneticAlgorithm
+from opt.single_objective.comb.drug_discovery_problem.solver import genetic_algorithm
 from opt.single_objective.comb.drug_discovery_problem.mutationInfo import MutationInfo
 
 class GAParameters:
@@ -323,7 +323,7 @@ class GAParameters:
 
         self.application.blockTransfer = True
 
-        moleculeBoxes.newGenerationMolecules = geneticAlgorithm(
+        moleculeBoxes.newGenerationMolecules = genetic_algorithm(
             moleculeBoxes.selectedMolecules,
             True,
             self.application.numberOfGenerations,

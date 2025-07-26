@@ -22,9 +22,7 @@ class Application(QWidget):
     def __init__(self):
         super().__init__()
 
-        problem:DrugDiscoveryProblem = DrugDiscoveryProblem.from_input_file('opt/single_objective/comb/drug_discovery_problem/data/molecules.json')
-        solution:DrugDiscoveryProblemSolution = DrugDiscoveryProblemSolution()
-        finish:FinishControl = FinishControl(criteria='iterations', iterations_max=10000)
+        self.problem : DrugDiscoveryProblem = DrugDiscoveryProblem.from_input_file('opt/single_objective/comb/drug_discovery_problem/data/molecules.json')
 
         self.setWindowTitle('Drug Discovery')
         self.resize(800, 600)
@@ -32,7 +30,7 @@ class Application(QWidget):
         self.mainLayout = QHBoxLayout()
         self.leftLayout = QVBoxLayout()
 
-        self.molecules = problem.molecules
+        self.molecules = self.problem.molecules
         self.sliderValues = [0.66, 0.46, 0.05, 0.61, 0.06, 0.65, 0.48, 0.95]
 
         # Allow transfering molecule boxes between scroll areas
