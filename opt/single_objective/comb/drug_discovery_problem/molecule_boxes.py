@@ -473,7 +473,7 @@ class MoleculeBoxes(QWidget):
         formatted_time: str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open('opt/single_objective/comb/drug_discovery_problem/results/best_candidate_molecules.txt', 'a') as candidates_file:
             candidates_file.write(f"SMILES: {self.new_generation_molecules[0].get_smiles()}\nQED: {round(self.new_generation_molecules[0].get_qed(), 4)}\nDate created: {formatted_time}\nParameter weights:")
-            for value in list(self.new_generation_molecules[0].getWeights()):
+            for value in list(self.new_generation_molecules[0].get_weights()):
                 candidates_file.write(f"{value} ")
             candidates_file.write("\n-------------------------------------------\n")
         self.save_label.setStyleSheet("color: green; font-style: italic;")
@@ -569,8 +569,8 @@ class MoleculeBoxes(QWidget):
         self.load_new_generation()
         self.precedent_label.setText("1. generation")
         self.second_label.setText("2. generation")
-        self.application.gaParameters.launch_button.setDisabled(False)
-        self.application.gaParameters.launch_button.setStyleSheet("""
+        self.application.ga_parameters.launch_button.setDisabled(False)
+        self.application.ga_parameters.launch_button.setStyleSheet("""
             QPushButton {
                 background-color: #4CAF50;
                 color: white;
@@ -584,8 +584,8 @@ class MoleculeBoxes(QWidget):
                 background-color: #45a049;
             }
         """)
-        self.application.gaParameters.roulette_check_box.setDisabled(False)
-        self.application.gaParameters.roulette_check_box.setStyleSheet("""
+        self.application.ga_parameters.roulette_check_box.setDisabled(False)
+        self.application.ga_parameters.roulette_check_box.setStyleSheet("""
             QCheckBox {
                 text-decoration: none;
             }
@@ -605,10 +605,10 @@ class MoleculeBoxes(QWidget):
                 border: 2px solid gray;
             }
         """)
-        self.application.gaParameters.generation_spin.setDisabled(False)
-        self.application.gaParameters.tournament_spin.setDisabled(False)
-        self.application.gaParameters.elitism_spin.setDisabled(False)
-        self.application.gaParameters.mutation_line_edit.setDisabled(False)
+        self.application.ga_parameters.generation_spin.setDisabled(False)
+        self.application.ga_parameters.tournament_spin.setDisabled(False)
+        self.application.ga_parameters.elitism_spin.setDisabled(False)
+        self.application.ga_parameters.mutation_line_edit.setDisabled(False)
         self.application.sbmt_btn.setDisabled(False)
         self.application.res_btn.setDisabled(False)
         self.application.block_transfer = False

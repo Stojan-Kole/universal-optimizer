@@ -176,7 +176,7 @@ class GAParameters:
         else:
             self.tournament_spin.setDisabled(False)
 
-    def getGAParametersWidget(self) -> QWidget:
+    def get_GA_parameters_widget(self) -> QWidget:
         """
         Returns the main widget containing all GA parameter controls.
         
