@@ -85,8 +85,8 @@ class HyperParameters:
         label: QLabel = self.h_boxes[idx].itemAt(0).widget()
         label.setText(f"{name}: {value/100}")
         self.application.slider_values[idx] = value/100
-        self.molecule_boxes.removeBoxes()
-        self.molecule_boxes.removeSelectedBoxes()
+        self.molecule_boxes.remove_boxes()
+        self.molecule_boxes.remove_selected_boxes()
         slider_values: list[float] = []
         for box in self.h_boxes:
             slider_values.append(box.itemAt(1).widget().value())
@@ -98,7 +98,7 @@ class HyperParameters:
         Resets all sliders to their default values and updates the display.
         """
         for i in range(len(self.names)):
-            self.h_boxes[i].itemAt(1).widget().setValue(self.default_values[i] * 100)
+            self.h_boxes[i].itemAt(1).widget().setValue(int(self.default_values[i] * 100))
 
     def get_sliders_widget(self) -> QWidget:
         """

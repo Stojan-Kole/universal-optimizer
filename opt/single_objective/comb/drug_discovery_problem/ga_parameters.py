@@ -296,8 +296,8 @@ class GAParameters:
         molecule_boxes.right_btn_cnt.setLayout(molecule_boxes.right_vbox3)
         molecule_boxes.right_btn_cnt.setFixedSize(350, 215)
 
-        molecule_boxes.bestBox: MoleculeBox = molecule_boxes.createMoleculeBox("", "To be determined", 0.0, 0, -1)
-        molecule_boxes.bestBox.setAlignment(Qt.AlignCenter)
+        molecule_boxes.best_box: MoleculeBox = molecule_boxes.create_molecule_box("", "To be determined", 0.0, 0, -1)
+        molecule_boxes.best_box.setAlignment(Qt.AlignCenter)
 
         self.launch_button.setDisabled(True)
         self.launch_button.setStyleSheet("""
@@ -346,7 +346,7 @@ class GAParameters:
         molecule_boxes.progress_cnt.setFixedSize(350, 120)
 
         molecule_boxes.right_hbox2.addWidget(molecule_boxes.right_btn_cnt)
-        molecule_boxes.right_hbox2.addWidget(molecule_boxes.bestBox)
+        molecule_boxes.right_hbox2.addWidget(molecule_boxes.best_box)
         molecule_boxes.right_hbox2.addSpacing(50)
         molecule_boxes.right_hbox2.addWidget(molecule_boxes.progress_cnt)
         molecule_boxes.right_hbox2.setAlignment(Qt.AlignHCenter)

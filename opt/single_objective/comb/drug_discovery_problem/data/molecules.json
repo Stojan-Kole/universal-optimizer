@@ -402,5 +402,9 @@
     {
         "SMILES": "C1CCC1",
         "Description": "Cyclobutane"
+    },
+    {
+        "SMILES": "CC(=O)C",
+        "Description": "Propanone"
     }
 ]

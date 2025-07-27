@@ -62,7 +62,7 @@ class Application(QWidget):
         self.cnt.setFixedWidth(765)
         self.cnt.setFixedHeight(300)
 
-        self.leftLayout.addWidget(self.molecule_boxes.getSelectionWidget())
+        self.leftLayout.addWidget(self.molecule_boxes.get_selection_widget())
         self.leftLayout.addSpacing(70)
         self.leftLayout.addWidget(self.cnt)
         self.leftLayout.addSpacing(30)
@@ -74,9 +74,9 @@ class Application(QWidget):
         self.mainLayout.addWidget(self.leftWrapper)
 
         self.rightLayout = QVBoxLayout()
-        self.rightLayout.addWidget(self.molecule_boxes.getPrecedentScrollArea())
-        self.rightLayout.addWidget(self.molecule_boxes.getSecondScrollArea())
-        self.rightLayout.addWidget(self.molecule_boxes.getBest())
+        self.rightLayout.addWidget(self.molecule_boxes.get_precedent_scroll_area())
+        self.rightLayout.addWidget(self.molecule_boxes.get_second_scroll_area())
+        self.rightLayout.addWidget(self.molecule_boxes.get_best())
 
         self.rightWrapper = QWidget()
         self.rightWrapper.setLayout(self.rightLayout)
