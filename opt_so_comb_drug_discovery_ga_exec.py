@@ -15,7 +15,6 @@ from opt.single_objective.comb.drug_discovery_problem.mutation_info import Mutat
 from uo.algorithm.metaheuristic.finish_control import FinishControl
 
 from opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem import DrugDiscoveryProblem
-from opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem_solution import DrugDiscoveryProblemSolution
 
 class Application(QWidget):
     """

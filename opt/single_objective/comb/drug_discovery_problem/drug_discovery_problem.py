@@ -147,7 +147,6 @@ class DrugDiscoveryProblem(Problem):
         instance.molecules = molecules
         return instance
 
-    @classmethod
     def get_random_individual(self) -> Individual:
         """
         Returns a randomly selected Individual from the loaded list of molecules.
