@@ -160,7 +160,15 @@ b. Contribution in solving **combinatorial** optimization problems:
         
         12. Electromagnetism-like Metaheuristic method, with solution that has binary `BitArray` representation - [AndjelaDamnjanovic]_  
 
-        13. ILP model, with `linopy` library and `Gurobi` solver - [AndjelaDamnjanovic]_  
+        13. ILP model, with `linopy` library and `Gurobi` solver - [AndjelaDamnjanovic]_ 
+
+    b.4. Drug Discovery Problem :ref:`Problem_Drug_Discovery`:
+
+        14. Representation of the problem (in class :class:`~opt.single_objective.comb.drug_discovering_problem.drug_discovering_problem.DrugDiscoveryProblem`) and solution with SMILES string-based representation (in class :class:`~~opt.single_objective.comb.drug_discovery_problem.individual.Individual`) - [LazarSavic]_
+
+        15. Genetic Algorithm method, with fitness evaluation based solely on the QED (Quantitative Estimate of Drug-likeness) coefficient - [LazarSavic]_
+
+        16. Entry point for the entire GUI solving this problem, in file :file:`opt_so_comb_drug_discovery_ga_exec.py`. All parameters that govern method execution are accessible to user through the graphical interface. - [LazarSavic]_
 
 
 c. Contribution in solving **global** optimization problems:
@@ -182,3 +190,5 @@ Contributor List
 .. [MarkoRadosavljevic] Marko Radosavljević, `<https://github.com/Markic01>`_ e-mail: mi20079@alas.matf.bg.ac.rs
 
 .. [AndjelaDamnjanovic] Anđela Damjanović, `<https://github.com/AndjelaDamnjanovic>`_ e-mail: mi19059@alas.matf.bg.ac.rs
+
+.. [LazarSavic] Lazar Savić, `<https://github.com/killica>`_ e-mail: mi21004@alas.matf.bg.ac.rs
