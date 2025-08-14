@@ -13,6 +13,8 @@ Subpackages
    
    uo.algorithm.metaheuristic.variable_neighborhood_search
 
+   uo.algorithm.metaheuristic.simulated_annealing
+
 Submodules
 ----------
 
