@@ -126,6 +126,20 @@
 <p>Instance of the class <code class="xref py py-class docutils literal notranslate"><span class="pre">VnsOptimizer</span></code> encapsulate
 <a class="reference internal" href="implemented_algorithms_variable_neighborhood_search.html#algorithm-variable-neighborhood-search"><span class="std std-ref">Variable Neighborhood Search</span></a> optimization algorithm.</p>
 <dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the <cite>VnsOptimizer</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new <cite>VnsOptimizer</cite> instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>VnsOptimizer</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.from_construction_tuple">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_construction_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_tuple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizerConstructionParameters"><span class="pre">VnsOptimizerConstructionParameters</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.from_construction_tuple" title="Link to this definition"></a></dt>
 <dd><p>Additional constructor, that creates new instance of class <code class="xref py py-class docutils literal notranslate"><span class="pre">VnsOptimizer</span></code>.</p>
@@ -195,6 +209,34 @@
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.vns_ls_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vns_ls_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">VnsLocalSearchSupport</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.vns_ls_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the local search support in VNS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>local search support  in VNS</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>VnsLocalSearchSupport</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.vns_shaking_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">vns_shaking_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">VnsShakingSupport</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.variable_neighborhood_search.vns_optimizer.VnsOptimizer.vns_shaking_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the shaking support` in VNS</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>shaking support in VNS</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>VnsShakingSupport</cite></p>
 </dd>
 </dl>
 </dd></dl>
