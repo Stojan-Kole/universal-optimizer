@@ -301,3 +301,7 @@ opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3
 outputs
 /opt/single_objective/comb/max_ones_count_problem/outputs/*.csv
 /opt/single_objective/comb/max_ones_count_problem/outputs
+/.vs/--universal-optimizer.slnx/v18
+/.vs/--universal-optimizer/v18
+/.vs/--universal-optimizer.slnx/FileContentIndex
+/.vs
