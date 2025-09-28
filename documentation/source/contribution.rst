@@ -126,7 +126,15 @@ a. Contribution in the designing novel **optimization methods**:
     a.4. Electromagnetism-like :ref:`Algorithm_Electromagnetism_Like_Metaheuristic` (EM) metaheuristics:
         
         13. Structure, organization and main loop implementation - [AndjelaDamnjanovic]_
+    a.5. Simulated Annealing :ref:`Algorithm_Simulated_Annealing` (SA) metaheuristics:
+        
+        14. Structure, organization and main loop implementation - [MarkoLazarevic]_ 
 
+        15. Implementation of neighbourhood structures with integer representation (in class :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaNeighbourhoodInt`, using `int` predefined type) - [MarkoLazarevic]_ 
+
+        16. Implementation of neighbourhood structures with binary representation (in class :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaNeighbourhoodBitArray`, using :class:`bitstring.BitArray` class) - [MarkoLazarevic]_
+
+        17. Implementation of temperature calculating methods (in classes: :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaTemperatureConst`, :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaTemperatureLinear`, :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaTemperatureExponential`) - [MarkoLazarevic]_ 
 
 b. Contribution in solving **combinatorial** optimization problems:
 
@@ -182,3 +190,5 @@ Contributor List
 .. [MarkoRadosavljevic] Marko Radosavljević, `<https://github.com/Markic01>`_ e-mail: mi20079@alas.matf.bg.ac.rs
 
 .. [AndjelaDamnjanovic] Anđela Damjanović, `<https://github.com/AndjelaDamnjanovic>`_ e-mail: mi19059@alas.matf.bg.ac.rs
+
+.. [MarkoLazarevic] Marko Lazarević, `<https://github.com/marko-lazarevic>`_ e-mail: mi21098@alas.matf.bg.ac.rs
