@@ -30,6 +30,7 @@ Library  `Universal optimizer <https://github.com/math-rs-comp-int/universal-opt
    :caption: Program code 
 
    modules
+   
 
 .. toctree::
    :maxdepth: 4
