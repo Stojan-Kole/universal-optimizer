@@ -140,5 +140,9 @@ class TestMAMLMetaheuristicNumeric(unittest.TestCase):
         print(f"Prosečna greška se smanjila sa {avg_errors[0]:.4f} na {avg_errors[-1]:.4f}")
 
 
+
+
+
+
 if __name__ == "__main__":
     unittest.main()

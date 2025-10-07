@@ -145,7 +145,7 @@ class MAMLMetaheuristic(PopulationBasedMetaheuristic):
     # -----------------------------
     # Run method
     # -----------------------------
-    def run(self, dim: int = 1, visualize: bool = True) -> np.ndarray:
+    def run(self, dim: int = 1) -> np.ndarray:
         """
         Run MAML metaheuristic optimization.
         Returns learned initialization vector.
@@ -156,14 +156,5 @@ class MAMLMetaheuristic(PopulationBasedMetaheuristic):
         for _ in range(self.outer_steps):
             self.main_loop_iteration()
             theta_history.append(self.theta.copy())
-
-        if visualize:
-            theta_history = np.array(theta_history)
-            plt.plot(theta_history, marker='o')
-            plt.title("Theta evolution over outer iterations")
-            plt.xlabel("Outer iteration")
-            plt.ylabel("Theta value")
-            plt.grid(True)
-            plt.show()
 
         return self.theta
