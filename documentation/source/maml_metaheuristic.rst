@@ -3,39 +3,59 @@ MAML Metaheuristic
 
 .. _maml_algorithm_page:
 
-The **Model-Agnostic Meta-Learning (MAML)** metaheuristic is an optimization algorithm
-designed to learn good initial parameters (`theta`) that can be quickly adapted to solve new tasks.
+The **Model-Agnostic Meta-Learning (MAML)** metaheuristic learns reusable
+initialization parameters (``theta``) that can be quickly adapted to new
+optimization tasks. It is useful in few-shot optimization where each task has
+limited data.
 
-This algorithm is especially useful in **few-shot optimization** settings, where data is limited.
+Main idea
+---------
 
-**Main Idea**:
-- Use a set of training tasks (objective functions)
-- Perform inner gradient steps on each task
-- Accumulate meta-gradient across tasks
-- Update the shared parameters (`theta`) via outer loop
+- Use a set of training tasks (objective functions).
+- For each task perform a small number of inner-loop gradient steps starting
+  from a shared initialization ``theta``.
+- Accumulate the meta-gradient across tasks and update ``theta`` in the outer
+  loop.
 
-**Parameters**:
-- `alpha`: Inner loop learning rate
-- `beta`: Outer loop learning rate
-- `inner_steps`: Number of gradient steps per task
-- `outer_steps`: Total meta-iterations
+Parameters
+----------
 
-**Code Reference**:
-- :class:`uo.algorithm.metaheuristic.maml_metaheuristic.MAMLMetaheuristic`
+- ``alpha``: inner-loop learning rate
+- ``beta``: outer-loop learning rate
+- ``inner_steps``: number of gradient steps per task
+- ``outer_steps``: number of meta-iterations
 
-**Usage Example**:
+Code reference
+--------------
+
+The implementation is provided by the project module below; Sphinx will include
+the class and method docstrings automatically.
+
+.. automodule:: uo.algorithm.metaheuristic.maml_metaheuristic.maml_metaheuristic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Usage example
+-------------
 
 .. code-block:: python
 
-   from uo.algorithm.metaheuristic.maml_metaheuristic import MAMLMetaheuristic
+   from uo.algorithm.metaheuristic.maml_metaheuristic.maml_metaheuristic import MAMLMetaheuristic
+   import numpy as np
 
-   def task1(x): return (x[0] - 3) ** 2
-   def task2(x): return (x[0] + 5) ** 2
+   def task1(x: np.ndarray) -> float:
+       return float(np.sum((x - 3.0) ** 2))
 
-   maml = MAMLMetaheuristic(tasks=[task1, task2])
-   result = maml.run(dim=1)
-   print(result)
+   def task2(x: np.ndarray) -> float:
+       return float(np.sum((x + 5.0) ** 2))
 
-.. note::
+   maml = MAMLMetaheuristic(tasks=[task1, task2], alpha=0.1, beta=0.01, inner_steps=1, outer_steps=10)
+   theta = maml.run(dim=1)
+   print(theta)
 
-   This algorithm requires tasks to be differentiable (at least numerically).
+Notes
+-----
+
+The implementation uses numerical finite-difference gradients by default; if
+your tasks provide analytic gradients, prefer using them for better stability.

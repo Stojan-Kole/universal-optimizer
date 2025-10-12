@@ -52,12 +52,12 @@ class MAMLMetaheuristic(PopulationBasedMetaheuristic):
     ) -> None:
 
         # -----------------------------
-        # Dummy Problem instanca
+        # Dummy Problem instance
         # -----------------------------
         problem = DummyProblem()
 
         # -----------------------------
-        # Poziv bazne klase sa pravim kontrolama
+        # Base class initialization
         # -----------------------------
         super().__init__(
             finish_control=FinishControl(),
@@ -70,7 +70,7 @@ class MAMLMetaheuristic(PopulationBasedMetaheuristic):
         )
 
         # -----------------------------
-        # Parametri MAML algoritma
+        # Parameters of MAML algorithm
         # -----------------------------
         self.tasks = list(tasks)
         self.alpha = alpha
@@ -108,7 +108,6 @@ class MAMLMetaheuristic(PopulationBasedMetaheuristic):
         # outer update
         self.theta -= self.beta * meta_grad / len(self.tasks)
 
-        # ispis trenutnog theta
         #print(f"After outer iteration: {self}")
 
     def copy(self) -> MAMLMetaheuristic:
