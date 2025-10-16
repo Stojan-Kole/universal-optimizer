@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>opt.single_objective.comb.drug_discovery_problem package &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">In-depth Information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems_to_be_solved.html">Problems to be solved</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#optimization">Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">opt.single_objective.comb.drug_discovery_problem package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/opt.single_objective.comb.drug_discovery_problem.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="opt-single-objective-comb-drug-discovery-problem-package">
+<h1>opt.single_objective.comb.drug_discovery_problem package<a class="headerlink" href="#opt-single-objective-comb-drug-discovery-problem-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem">
+<span id="opt-single-objective-comb-drug-discovery-problem-drug-discovery-problem-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem" title="Link to this heading"></a></h2>
+<dl class="py class" id="py-drug-discovery-problem">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.</span></span><span class="sig-name descname"><span class="pre">DrugDiscoveryProblem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'DrugDiscoveryProblem'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_minimization</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_multi_objective</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a></p>
+<p>Class representing the Drug Discovery Problem.</p>
+<p>This class inherits from the Problem class and is used to define and solve the Drug Discovery Problem. The problem is defined by a graph and a list of source terminal pairs.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.name">
+<span class="sig-name descname"><span class="pre">name</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.name" title="Link to this definition"></a></dt>
+<dd><p>Name of the problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.is_minimization">
+<span class="sig-name descname"><span class="pre">is_minimization</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.is_minimization" title="Link to this definition"></a></dt>
+<dd><p>Whether the problem is a minimization problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.is_multi_objective">
+<span class="sig-name descname"><span class="pre">is_multi_objective</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.is_multi_objective" title="Link to this definition"></a></dt>
+<dd><p>Whether the problem has multiple objectives.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__molecules">
+<span class="sig-name descname"><span class="pre">__molecules</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__molecules" title="Link to this definition"></a></dt>
+<dd><p>List of Individuals loaded from file, representing available candidate molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual">Individual</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__(name</span></span></dt>
+<dd><p>str = “DrugDiscoveryProblem”, is_minimization: bool = False, is_multi_objective: bool = False):
+Initializes a new instance of DrugDiscoveryProblem.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__load_from_file__(file_path</span></span></dt>
+<dd><p>str) -&gt; list[Individual]:
+Internal method that loads molecule data from a JSON file and returns a list of Individuals.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">from_input_file(file_path</span></span></dt>
+<dd><p>str) -&gt; DrugDiscoveryProblem:
+Class method that loads molecules from file and returns a new DrugDiscoveryProblem instance with initial molecules.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.get_random_individual">
+<span class="sig-name descname"><span class="pre">get_random_individual</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.get_random_individual" title="Link to this definition"></a></dt>
+<dd><p>Returns a randomly selected Individual from the list of initial molecules.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem" title="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem"><span class="pre">DrugDiscoveryProblem</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.copy" title="Link to this definition"></a></dt>
+<dd><p>Returns a copy of the current DrugDiscoveryProblem instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__str__" title="Link to this definition"></a></dt>
+<dd><p>String representation of the DrugDiscoveryProblem instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.__repr__" title="Link to this definition"></a></dt>
+<dd><p>Official representation of the DrugDiscoveryProblem instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__format__(spec</span></span></dt>
+<dd><p>str) -&gt; str:
+Formatted representation of the DrugDiscoveryProblem instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem" title="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem"><span class="pre">DrugDiscoveryProblem</span></a></span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem" title="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem"><code class="xref py py-class docutils literal notranslate"><span class="pre">DrugDiscoveryProblem</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.from_input_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_input_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem" title="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem"><span class="pre">DrugDiscoveryProblem</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.from_input_file" title="Link to this definition"></a></dt>
+<dd><p>Additional constructor. Creates a DrugDiscoveryProblem instance from a JSON file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – path to the JSON file with molecule data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>initialized DrugDiscoveryProblem instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">get_random_individual</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<dd><p>Returns a randomly selected Individual from the loaded list of molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>randomly selected Individual</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual">Individual</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.molecules">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">molecules</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.drug_discovery_problem.DrugDiscoveryProblem.molecules" title="Link to this definition"></a></dt>
+<dd><p>Getter for the list of loaded molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of Individual instances</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)">list</a>[<a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual">Individual</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.fitness">
+<span id="opt-single-objective-comb-drug-discovery-problem-fitness-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.fitness module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.fitness" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.fitness.Fitness">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.fitness.</span></span><span class="sig-name descname"><span class="pre">Fitness</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.66,</span> <span class="pre">0.46,</span> <span class="pre">0.05,</span> <span class="pre">0.61,</span> <span class="pre">0.06,</span> <span class="pre">0.65,</span> <span class="pre">0.48,</span> <span class="pre">0.95)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.fitness.Fitness" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>A class used to compute the QED fitness score for a given RDKit molecule.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.molecule">
+<span class="sig-name descname"><span class="pre">molecule</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.molecule" title="Link to this definition"></a></dt>
+<dd><p>RDKit molecule object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Mol</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.weights">
+<span class="sig-name descname"><span class="pre">weights</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.weights" title="Link to this definition"></a></dt>
+<dd><p>Optional weights used in the QED calculation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)">tuple</a>[<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.qed">
+<span class="sig-name descname"><span class="pre">qed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.fitness.Fitness.qed" title="Link to this definition"></a></dt>
+<dd><p>Compute the QED (Quantitative Estimate of Drug-likeness) for the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QED value.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.ga_parameters">
+<span id="opt-single-objective-comb-drug-discovery-problem-ga-parameters-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.ga_parameters module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.ga_parameters" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.ga_parameters.</span></span><span class="sig-name descname"><span class="pre">GAParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QApplication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Widget component for configuring Genetic Algorithm (GA) parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>application</strong> (<em>QApplication</em>) – Main application instance to interact with GA controls.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.get_GA_parameters_widget">
+<span class="sig-name descname"><span class="pre">get_GA_parameters_widget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.get_GA_parameters_widget" title="Link to this definition"></a></dt>
+<dd><p>Returns the main widget containing all GA parameter controls.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QWidget with all GA parameter inputs</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.on_launch_button_clicked">
+<span class="sig-name descname"><span class="pre">on_launch_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.on_launch_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Handles the event when the user clicks the ‘Launch’ button to start the genetic algorithm.</p>
+<p>This method performs the following:
+1. Retrieves the selected configuration parameters from the GUI.
+2. Initializes and runs the genetic algorithm using the solver module.
+3. Loads and displays the newly generated population of molecules.
+4. Updates the GUI state to reflect that the optimization process has started:
+- Enables buttons and labels for further interaction.
+- Sets the progress and generation counter.
+- Prepares the next generation environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.14)"><strong>ValueError</strong></a> – If input parameters are missing or invalid.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.on_roulette_changed">
+<span class="sig-name descname"><span class="pre">on_roulette_changed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.ga_parameters.GAParameters.on_roulette_changed" title="Link to this definition"></a></dt>
+<dd><p>Callback function triggered when the roulette checkbox is toggled.</p>
+<p>Enables or disables the tournament size input field based on selection mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – The new state of the checkbox (Qt.Checked or Qt.Unchecked)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.hyper_parameters">
+<span id="opt-single-objective-comb-drug-discovery-problem-hyper-parameters-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.hyper_parameters module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.hyper_parameters" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.hyper_parameters.</span></span><span class="sig-name descname"><span class="pre">HyperParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QApplication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>GUI widget for adjusting hyperparameter weights via sliders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>application</strong> – Reference to the main QApplication object</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.get_sliders_widget">
+<span class="sig-name descname"><span class="pre">get_sliders_widget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.get_sliders_widget" title="Link to this definition"></a></dt>
+<dd><p>Returns the QWidget containing the full layout for sliders.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The widget containing sliders and labels</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.on_reset_button_clicked">
+<span class="sig-name descname"><span class="pre">on_reset_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.on_reset_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Resets all sliders to their default values and updates the display.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.update_param_label">
+<span class="sig-name descname"><span class="pre">update_param_label</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">idx</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.hyper_parameters.HyperParameters.update_param_label" title="Link to this definition"></a></dt>
+<dd><p>Updates the label for a hyperparameter based on the slider value.
+Also triggers updates of molecule boxes based on new weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – Index of the slider and label to update</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.individual">
+<span id="opt-single-objective-comb-drug-discovery-problem-individual-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.individual module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.individual" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.individual.</span></span><span class="sig-name descname"><span class="pre">Individual</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.66,</span> <span class="pre">0.46,</span> <span class="pre">0.05,</span> <span class="pre">0.61,</span> <span class="pre">0.06,</span> <span class="pre">0.65,</span> <span class="pre">0.48,</span> <span class="pre">0.95)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Represents a molecular individual characterized by its SMILES string,
+weights for property importance, and computed QED fitness value.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_description">
+<span class="sig-name descname"><span class="pre">get_description</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_description" title="Link to this definition"></a></dt>
+<dd><p>Returns the description of the molecule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_qed">
+<span class="sig-name descname"><span class="pre">get_qed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_qed" title="Link to this definition"></a></dt>
+<dd><p>Returns the QED fitness value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_smiles">
+<span class="sig-name descname"><span class="pre">get_smiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_smiles" title="Link to this definition"></a></dt>
+<dd><p>Returns the SMILES string of the molecule.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_weights">
+<span class="sig-name descname"><span class="pre">get_weights</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.get_weights" title="Link to this definition"></a></dt>
+<dd><p>Returns the weights used for fitness evaluation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.is_valid_smiles">
+<span class="sig-name descname"><span class="pre">is_valid_smiles</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.is_valid_smiles" title="Link to this definition"></a></dt>
+<dd><p>Checks whether the current SMILES string can be parsed into a valid molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if valid, False otherwise</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_description">
+<span class="sig-name descname"><span class="pre">set_description</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_description" title="Link to this definition"></a></dt>
+<dd><p>Updates the description of the molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>description</strong> – New description string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_smiles">
+<span class="sig-name descname"><span class="pre">set_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_smiles" title="Link to this definition"></a></dt>
+<dd><p>Updates the SMILES string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>smiles</strong> – New SMILES representation</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_weights">
+<span class="sig-name descname"><span class="pre">set_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><span class="pre">Tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual.set_weights" title="Link to this definition"></a></dt>
+<dd><p>Updates the weights and recalculates fitness.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weights</strong> – New weights for fitness evaluation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.insert_molecule">
+<span id="opt-single-objective-comb-drug-discovery-problem-insert-molecule-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.insert_molecule module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.insert_molecule" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.insert_molecule.</span></span><span class="sig-name descname"><span class="pre">NewMoleculeForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QApplication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>GUI component for adding a custom molecule via SMILES input and description.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_form">
+<span class="sig-name descname"><span class="pre">get_form</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_form" title="Link to this definition"></a></dt>
+<dd><p>Returns the QWidget container holding the form.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>QWidget with the input layout</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_input_description_text">
+<span class="sig-name descname"><span class="pre">get_input_description_text</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_input_description_text" title="Link to this definition"></a></dt>
+<dd><p>Returns the current text from the molecule description input field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Description string entered by the user</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_input_smiles_text">
+<span class="sig-name descname"><span class="pre">get_input_smiles_text</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.insert_molecule.NewMoleculeForm.get_input_smiles_text" title="Link to this definition"></a></dt>
+<dd><p>Returns the current text from the SMILES input field.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>SMILES string entered by the user</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.molecule_boxes">
+<span id="opt-single-objective-comb-drug-discovery-problem-molecule-boxes-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.molecule_boxes module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.molecule_boxes" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.molecule_boxes.</span></span><span class="sig-name descname"><span class="pre">ClickableGroupBox</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molecule_boxes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">role</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QWidget</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QGroupBox</span></code></p>
+<p>A custom QGroupBox that represents a clickable molecule box for selection and deselection
+between available and selected molecules.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.enterEvent">
+<span class="sig-name descname"><span class="pre">enterEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.enterEvent" title="Link to this definition"></a></dt>
+<dd><p>Highlights the SMILES label when mouse hovers over the box (if not blocked).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Enter event object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.leaveEvent">
+<span class="sig-name descname"><span class="pre">leaveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.leaveEvent" title="Link to this definition"></a></dt>
+<dd><p>Resets the SMILES label style when mouse leaves the box (if not blocked).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Leave event object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QEvent</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox.mousePressEvent" title="Link to this definition"></a></dt>
+<dd><p>Handles the logic of moving a molecule from one list to the other on left-click.</p>
+<p>If the application is not currently blocking transfer,
+and the role is valid (0 or 1), the molecule is moved to the opposite list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>event</strong> – Mouse event object.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.molecule_boxes.</span></span><span class="sig-name descname"><span class="pre">MoleculeBoxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">application</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QApplication</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">QWidget</span></code></p>
+<p>A widget that displays molecule representations in scrollable boxes,
+and allows user to select molecules for the first generation of the genetic algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.add_to_catalogue">
+<span class="sig-name descname"><span class="pre">add_to_catalogue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.add_to_catalogue" title="Link to this definition"></a></dt>
+<dd><p>Add a new molecule to the catalogue and save it to the JSON file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.calculate_average_qed">
+<span class="sig-name descname"><span class="pre">calculate_average_qed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.calculate_average_qed" title="Link to this definition"></a></dt>
+<dd><p>Calculate the average QED coefficient for the current new generation of molecules
+and append the result with a timestamp to a file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.create_molecule_box">
+<span class="sig-name descname"><span class="pre">create_molecule_box</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">qed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox" title="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.ClickableGroupBox"><span class="pre">ClickableGroupBox</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.create_molecule_box" title="Link to this definition"></a></dt>
+<dd><p>Create a styled box widget representing a molecule with its image and properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_best">
+<span class="sig-name descname"><span class="pre">get_best</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_best" title="Link to this definition"></a></dt>
+<dd><p>Get the widget displaying the current best molecule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Widget showing the best molecule of the current generation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_precedent_scroll_area">
+<span class="sig-name descname"><span class="pre">get_precedent_scroll_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_precedent_scroll_area" title="Link to this definition"></a></dt>
+<dd><p>Get the widget displaying selected molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Widget containing precedent scroll area.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_second_scroll_area">
+<span class="sig-name descname"><span class="pre">get_second_scroll_area</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_second_scroll_area" title="Link to this definition"></a></dt>
+<dd><p>Get the widget displaying new generation molecules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Widget containing scroll area for subsequent generation.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_selection_widget">
+<span class="sig-name descname"><span class="pre">get_selection_widget</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">QWidget</span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.get_selection_widget" title="Link to this definition"></a></dt>
+<dd><p>Get the widget that contains the molecule selection interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Widget with selectable molecule grid.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>QWidget</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_boxes">
+<span class="sig-name descname"><span class="pre">load_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.66,</span> <span class="pre">0.46,</span> <span class="pre">0.05,</span> <span class="pre">0.61,</span> <span class="pre">0.06,</span> <span class="pre">0.65,</span> <span class="pre">0.48,</span> <span class="pre">0.95)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_boxes" title="Link to this definition"></a></dt>
+<dd><p>Load unselected molecule boxes into the main grid layout.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weights</strong> – Weights used to compute the QED score for each molecule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_new_generation">
+<span class="sig-name descname"><span class="pre">load_new_generation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.66,</span> <span class="pre">0.46,</span> <span class="pre">0.05,</span> <span class="pre">0.61,</span> <span class="pre">0.06,</span> <span class="pre">0.65,</span> <span class="pre">0.48,</span> <span class="pre">0.95)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_new_generation" title="Link to this definition"></a></dt>
+<dd><p>Load boxes for the newly generated molecules.</p>
+<p>Also updates the current best molecule display.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weights</strong> – Weights used to compute the QED score for each new generation molecule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_selected_boxes">
+<span class="sig-name descname"><span class="pre">load_selected_boxes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">(0.66,</span> <span class="pre">0.46,</span> <span class="pre">0.05,</span> <span class="pre">0.61,</span> <span class="pre">0.06,</span> <span class="pre">0.65,</span> <span class="pre">0.48,</span> <span class="pre">0.95)</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.load_selected_boxes" title="Link to this definition"></a></dt>
+<dd><p>Load selected molecules into their display area.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weights</strong> – Weights used to compute the QED score for each selected molecule.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_final_button_clicked">
+<span class="sig-name descname"><span class="pre">on_final_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_final_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Complete the full number of generations using the ‘Generate’ button logic.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_generate_button_clicked">
+<span class="sig-name descname"><span class="pre">on_generate_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_generate_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Generate a new generation using selected molecules and update all related UI elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_restart_button_clicked">
+<span class="sig-name descname"><span class="pre">on_restart_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_restart_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Reset the entire optimization process to the initial state.
+This method is typically called when the ‘Restart’ button is clicked.
+It clears molecule displays, resets all controls and progress indicators,
+and prepares the interface for a fresh run.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_save_button_clicked">
+<span class="sig-name descname"><span class="pre">on_save_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_save_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Save the best candidate molecule to a file and prompt user for additional statistics.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_select_all_button_clicked">
+<span class="sig-name descname"><span class="pre">on_select_all_button_clicked</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.on_select_all_button_clicked" title="Link to this definition"></a></dt>
+<dd><p>Move all molecules from the current list to the selected list and refresh the display.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_boxes">
+<span class="sig-name descname"><span class="pre">remove_boxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_boxes" title="Link to this definition"></a></dt>
+<dd><p>Remove all unselected molecule boxes from the layout.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_new_generation_boxes">
+<span class="sig-name descname"><span class="pre">remove_new_generation_boxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_new_generation_boxes" title="Link to this definition"></a></dt>
+<dd><p>Remove all new generation molecule boxes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_selected_boxes">
+<span class="sig-name descname"><span class="pre">remove_selected_boxes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.remove_selected_boxes" title="Link to this definition"></a></dt>
+<dd><p>Remove all selected molecule boxes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.tanimoto">
+<span class="sig-name descname"><span class="pre">tanimoto</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.molecule_boxes.MoleculeBoxes.tanimoto" title="Link to this definition"></a></dt>
+<dd><p>Calculate pairwise Tanimoto similarity coefficients between molecules in the
+current new generation and save the results to a file.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.mutation_info">
+<span id="opt-single-objective-comb-drug-discovery-problem-mutation-info-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.mutation_info module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.mutation_info" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.mutation_info.</span></span><span class="sig-name descname"><span class="pre">MutationInfo</span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Loads mutation rules for atoms, groups, and insertions from predefined text files.</p>
+<p>These rules are later used by the genetic algorithm for mutating molecular structures.</p>
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem.solver">
+<span id="opt-single-objective-comb-drug-discovery-problem-solver-module"></span><h2>opt.single_objective.comb.drug_discovery_problem.solver module<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem.solver" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.atom_switch_mutation">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">atom_switch_mutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">individual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.atom_switch_mutation" title="Link to this definition"></a></dt>
+<dd><p>Perform atom switch mutation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – The individual to mutate</p></li>
+<li><p><strong>mi</strong> – MutationInfo with atom switch map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.crossover">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">crossover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">child1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">child2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.crossover" title="Link to this definition"></a></dt>
+<dd><p>Perform crossover on two parent individuals to generate two child individuals.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>parent1</strong> – First parent individual</p></li>
+<li><p><strong>parent2</strong> – Second parent individual</p></li>
+<li><p><strong>child1</strong> – First child individual (result)</p></li>
+<li><p><strong>child2</strong> – Second child individual (result)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.deletion_mutation">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">deletion_mutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">individual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.deletion_mutation" title="Link to this definition"></a></dt>
+<dd><p>Perform deletion mutation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – The individual to mutate</p></li>
+<li><p><strong>mi</strong> – MutationInfo (not used but included for consistency)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.genetic_algorithm">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">genetic_algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_one_generation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_generations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">roulette_selection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tournament_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">elitism_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">individual_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QLabel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">individual_progress</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">QProgressBar</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.genetic_algorithm" title="Link to this definition"></a></dt>
+<dd><p>Genetic algorithm for molecule evolution.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – Initial population of individuals</p></li>
+<li><p><strong>only_one_generation</strong> – If True, run only one generation regardless of number_of_generations</p></li>
+<li><p><strong>number_of_generations</strong> – Total number of generations to evolve</p></li>
+<li><p><strong>roulette_selection</strong> – Whether to use roulette wheel selection or tournament selection</p></li>
+<li><p><strong>tournament_size</strong> – Size of the tournament if tournament selection is used</p></li>
+<li><p><strong>elitism_size</strong> – Number of elite individuals preserved between generations</p></li>
+<li><p><strong>mutation_probability</strong> – Probability of mutation</p></li>
+<li><p><strong>mi</strong> – Mutation information structure</p></li>
+<li><p><strong>individual_label</strong> – Label object for GUI update</p></li>
+<li><p><strong>individual_progress</strong> – Progress bar object for GUI update</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Evolved population after all generations</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[<cite>Individual</cite>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.group_switch_mutation">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">group_switch_mutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">individual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.group_switch_mutation" title="Link to this definition"></a></dt>
+<dd><p>Perform group switch mutation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – The individual to mutate</p></li>
+<li><p><strong>mi</strong> – MutationInfo with group switch map</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.insertion_mutation">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">insertion_mutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">individual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.insertion_mutation" title="Link to this definition"></a></dt>
+<dd><p>Perform insertion mutation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – The individual to mutate</p></li>
+<li><p><strong>mi</strong> – MutationInfo with list of insertions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.is_valid_smiles">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">is_valid_smiles</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smiles</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.is_valid_smiles" title="Link to this definition"></a></dt>
+<dd><p>Validate SMILES string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>smiles</strong> – SMILES string</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if valid, False otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>bool</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.mutation">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">mutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">individual</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo" title="opt.single_objective.comb.drug_discovery_problem.mutation_info.MutationInfo"><span class="pre">MutationInfo</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.mutation" title="Link to this definition"></a></dt>
+<dd><p>Mutate an individual with a given mutation probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>individual</strong> – The individual to mutate</p></li>
+<li><p><strong>mutation_probability</strong> – Probability of mutation</p></li>
+<li><p><strong>mi</strong> – MutationInfo object with mutation rules</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.roulette_wheel_selection">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">roulette_wheel_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.roulette_wheel_selection" title="Link to this definition"></a></dt>
+<dd><p>Roulette wheel selection based on QED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>population</strong> – Population to select from</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected individual</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>Individual</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.selection">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roulette_selection</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tournament_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.selection" title="Link to this definition"></a></dt>
+<dd><p>Select an individual from the population.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – Current population</p></li>
+<li><p><strong>roulette_selection</strong> – Whether to use roulette selection</p></li>
+<li><p><strong>tournament_size</strong> – Tournament size if using tournament selection</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected individual</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>Individual</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.suppress_rdkit_warnings">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">suppress_rdkit_warnings</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generator" title="(in Python v3.14)"><span class="pre">Generator</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.suppress_rdkit_warnings" title="Link to this definition"></a></dt>
+<dd><p>Context manager to suppress RDKit warnings/errors.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="opt.single_objective.comb.drug_discovery_problem.solver.tournament_selection">
+<span class="sig-prename descclassname"><span class="pre">opt.single_objective.comb.drug_discovery_problem.solver.</span></span><span class="sig-name descname"><span class="pre">tournament_selection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">population</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tournament_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#opt.single_objective.comb.drug_discovery_problem.individual.Individual" title="opt.single_objective.comb.drug_discovery_problem.individual.Individual"><span class="pre">Individual</span></a></span></span><a class="headerlink" href="#opt.single_objective.comb.drug_discovery_problem.solver.tournament_selection" title="Link to this definition"></a></dt>
+<dd><p>Tournament selection based on QED.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>population</strong> – Population to select from</p></li>
+<li><p><strong>tournament_size</strong> – Number of individuals in tournament</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Best individual from tournament</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>Individual</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-opt.single_objective.comb.drug_discovery_problem">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-opt.single_objective.comb.drug_discovery_problem" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

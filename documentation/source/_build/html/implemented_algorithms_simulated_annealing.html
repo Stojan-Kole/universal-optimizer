@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulated Annealing &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="MAML Metaheuristic" href="maml_metaheuristic.html" />
+    <link rel="prev" title="Genetic Algorithm" href="implemented_algorithms_genetic_algorithm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">In-depth Information</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_exact.html">Implemented exact algorithms</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_variable_neighborhood_search.html">Variable Neighborhood Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_genetic_algorithm.html">Genetic Algorithm</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Simulated Annealing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-information">Basic information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#structure-of-the-algorithm">Structure of the algorithm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-notes">Implementation notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="maml_metaheuristic.html">MAML Metaheuristic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="problems_to_be_solved.html">Problems to be solved</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html#optimization">Optimization</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implemented_algorithms.html">Implemented algorithms</a></li>
+          <li class="breadcrumb-item"><a href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a></li>
+      <li class="breadcrumb-item active">Simulated Annealing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/implemented_algorithms_simulated_annealing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="simulated-annealing">
+<span id="algorithm-simulated-annealing"></span><h1>Simulated Annealing<a class="headerlink" href="#simulated-annealing" title="Link to this heading"></a></h1>
+<section id="basic-information">
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Link to this heading"></a></h2>
+<p>Simulated Annealing (SA) is a probabilistic metaheuristic inspired by the annealing process in metallurgy. It is used for finding an approximate global optimum of a given function in a large search space. The algorithm explores the solution space by probabilistically accepting not only improvements but also, with a certain probability, worse solutions. This allows it to escape local optima and increases the chance of finding a global optimum.</p>
+<p>The probability of accepting worse solutions decreases over time, controlled by a “temperature” parameter that is gradually reduced according to a cooling schedule.</p>
+</section>
+<section id="structure-of-the-algorithm">
+<h2>Structure of the algorithm<a class="headerlink" href="#structure-of-the-algorithm" title="Link to this heading"></a></h2>
+<p>The main steps in Simulated Annealing are:</p>
+<ol class="arabic simple">
+<li><p><strong>Initialization</strong>: Start with an initial solution and set the initial temperature.</p></li>
+<li><p><strong>Main Loop</strong>:
+- Generate a neighbor solution using a neighborhood structure.
+- Evaluate the neighbor solution.
+- If the neighbor is better than the current solution, accept it.
+- If the neighbor is worse, accept it with a probability that depends on the temperature and the difference in solution quality.
+- Update the temperature according to the cooling schedule.</p></li>
+<li><p><strong>Termination</strong>: The algorithm stops when a stopping criterion is met (e.g., maximum number of iterations, time limit, or temperature threshold).</p></li>
+</ol>
+</section>
+<section id="implementation-notes">
+<h2>Implementation notes<a class="headerlink" href="#implementation-notes" title="Link to this heading"></a></h2>
+<p>Implementation of this optimization method is given within the class <a class="reference internal" href="uo.algorithm.metaheuristic.simulated_annealing.html#py-sa-optimizer"><span class="std std-ref">SaOptimizer</span></a>.</p>
+<ul class="simple">
+<li><p><strong>Neighborhoods</strong>: The neighborhood structure is defined by subclasses of <code class="xref py py-class docutils literal notranslate"><span class="pre">SaNeighbourhood</span></code>, such as <code class="xref py py-class docutils literal notranslate"><span class="pre">SaNeighbourhoodInt</span></code> for integer-encoded solutions and <code class="xref py py-class docutils literal notranslate"><span class="pre">SaNeighbourhoodBitArray</span></code> for bit array-encoded solutions.</p></li>
+<li><p><strong>Temperature Schedules</strong>: Several temperature schedules are available, including constant, linear, and exponential decay, implemented in classes such as <code class="xref py py-class docutils literal notranslate"><span class="pre">SaTemperatureConst</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">SaTemperatureLinear</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">SaTemperatureExponential</span></code>.</p></li>
+<li><p><strong>Extensibility</strong>: You can implement custom neighborhoods or temperature schedules by subclassing the appropriate base classes.</p></li>
+<li><p><strong>Usage</strong>: To use the SA optimizer, construct an instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">SaOptimizer</span></code> with the desired neighborhood, temperature schedule, problem, and other parameters.</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="kirkpatrick1983" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Kirkpatrick1983<span class="fn-bracket">]</span></span>
+<p>Kirkpatrick, S.; Gelatt, C. D.; Vecchi, M. P. (1983). “Optimization by Simulated Annealing”. Science. 220 (4598): 671–680. doi:10.1126/science.220.4598.671.</p>
+</div>
+<div class="citation" id="aarts1988" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Aarts1988<span class="fn-bracket">]</span></span>
+<p>Aarts, E.; Korst, J. (1988). “Simulated Annealing and Boltzmann Machines”. Wiley.</p>
+</div>
+<div class="citation" id="burken2005" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>BurKen2005<span class="fn-bracket">]</span></span>
+<p>Burke, EK.; Kendall, G. (2005). Burke, Edmund K; Kendall, Graham (eds.). Search methodologies. Introductory tutorials in optimization and decision support techniques. Springer. doi:10.1007/978-1-4614-6940-7. ISBN 978-1-4614-6939-1.</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implemented_algorithms_genetic_algorithm.html" class="btn btn-neutral float-left" title="Genetic Algorithm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maml_metaheuristic.html" class="btn btn-neutral float-right" title="MAML Metaheuristic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
